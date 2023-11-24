@@ -1,0 +1,138 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Elysia Documentation",
+    "description": "Development documentation",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/public/hello": {
+      "get": {
+        "operationId": "publicHello",
+        "summary": "Hello API",
+        "tags": [
+          "public"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/private/hello": {
+      "get": {
+        "operationId": "privateHello",
+        "summary": "hello api",
+        "tags": [
+          "private"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/auth/signUp": {
+      "post": {
+        "operationId": "signUp",
+        "summary": "登録API",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/auth/signIn": {
+      "post": {
+        "parameters": [],
+        "operationId": "signIn",
+        "summary": "ログインAPI",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "description": "ユーザーID",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "パスワード",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "userId",
+                  "password"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "description": "ユーザーID",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "パスワード",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "userId",
+                  "password"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "description": "ユーザーID",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "パスワード",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "userId",
+                  "password"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/auth/signOut": {
+      "post": {
+        "operationId": "signOut",
+        "summary": "ログアウトAPI",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
